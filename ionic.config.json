@@ -1,5 +1,7 @@
 {
   "name": "speechApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
