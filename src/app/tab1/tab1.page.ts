@@ -23,8 +23,6 @@ export class Tab1Page {
         (error) => console.log(error)
       )
 
-
-
     this.speechRecognition.hasPermission()
       .then((hasPermission: boolean) => {
 
@@ -53,7 +51,5 @@ export class Tab1Page {
         },
         (onerror) => console.log('error:', onerror)
       )
-
   }
-
 }
