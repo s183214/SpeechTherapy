@@ -40,7 +40,8 @@ export class Tab1Page {
 
   start() {
     let options = {
-      language: 'da-DK'
+      language: 'da-DK',
+      showPopup: false
     }
 
     this.speechRecognition.startListening(options)
