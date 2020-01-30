@@ -9,11 +9,17 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 })
 export class Tab2Page {
 
-  bgcolor: string = 'white';
-  visible: boolean = false;
 
-  constructor(private cameraPreview: CameraPreview, public navCtrl: NavController, private speechRecognition: SpeechRecognition, public alertController: AlertController) { }
-  ngOnInit() {
+  word: string;
+  visible: boolean = false;
+  data: any;
+  passed: boolean;//not sure if we need it 
+
+
+  constructor(private cameraPreview: CameraPreview, public navCtrl: NavController, private speechRecognition: SpeechRecognition, public alertController: AlertController) {
+    this.read_data();
+  }
+  ngOnInit() { //camera
     // camera options (Size and location). In the following example, the preview uses the rear camera and display the preview in the back of the webview
     let options = {
       x: 0,
@@ -44,9 +50,23 @@ export class Tab2Page {
         }
 
       });
+    console.log(this.data);
   }
 
-  start() {
+  read_data() {
+    fetch('../../assets/files/words.json')
+      .then(res => res.json())
+      .then(json => {
+        this.data = json;
+        // console.log(this.data);
+      }).catch(error => console.log(error));
+
+
+  }
+
+
+
+  start() { //voice recognition
     let options = {
       language: 'da-DK',
       showPopup: false
@@ -56,17 +76,17 @@ export class Tab2Page {
       .subscribe(
         (matches: Array<string>) => {
           console.log(matches);
-          this.bgcolor = matches[0];
-          console.log("the word is " + this.bgcolor);
-          this.checkWord(this.bgcolor);
+          this.word = matches[0];
+          console.log("the word is " + this.word);
+          this.checkWord(this.word);
 
         },
         (onerror) => console.log('error:', onerror)
       )
   }
 
-  async checkWord(word: string) {
-    if (word == 'mad') {
+  async checkWord(checkWord: string) {
+    if (checkWord == 'mad') {
       // this.visible = true;
       const alert = await this.alertController.create({
         header: 'Correct',
