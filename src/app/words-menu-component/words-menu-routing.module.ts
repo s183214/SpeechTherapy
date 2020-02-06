@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { WordsMenuComponent } from './words-menu';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: TabsPage,
+    component: WordsMenuComponent,
     children: [
       {
         path: 'tab1',
@@ -23,7 +23,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../mirror-component/mirror-component.module').then(m => m.MirrorComponentModule)
           }
         ]
       },
@@ -55,4 +55,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

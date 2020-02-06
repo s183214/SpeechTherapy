@@ -8,11 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { CameraPreview } from '@ionic-native/camera-preview/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MirrorComponentModule } from '../app/mirror-component/mirror-component.module';
+import { WordsMenuComponentModule } from '../app/words-menu-component/words-menu.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, MirrorComponentModule, WordsMenuComponentModule],
   providers: [
     StatusBar,
     SplashScreen,
