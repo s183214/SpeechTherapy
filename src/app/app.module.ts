@@ -11,11 +11,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MirrorComponentModule } from '../app/mirror-component/mirror-component.module';
 import { WordsMenuComponentModule } from '../app/words-menu-component/words-menu.module';
+import { Tab3PageModule } from '../app/tab3/tab3.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, MirrorComponentModule, WordsMenuComponentModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, MirrorComponentModule, WordsMenuComponentModule, Tab3PageModule],
   providers: [
     StatusBar,
     SplashScreen,

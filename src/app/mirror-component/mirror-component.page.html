@@ -1,14 +1,20 @@
 <div>
+  <ion-button size="large" fill="clear" slot="start" (click)="backToMenu()">
+    <ion-icon name="arrow-back" slot="start" class="back-style"></ion-icon>
+  </ion-button>
   <h1 class="h-style">{{dataWord}}</h1>
   <br />
 </div>
 
 <ion-row class="row-margin">
   <ion-col>
-
-    <ion-button color="light" (click)="startVoiceRecognition()">Prøve igen</ion-button>
+    <ion-button color="primary" (click)="startVoiceRecognition()"
+      >Prøve igen</ion-button
+    >
   </ion-col>
   <ion-col>
-    <ion-button class="ion-float-right" color="light">Springe over</ion-button>
+    <ion-button class="ion-float-right" color="primary" (click)="skipWord()"
+      >Springe over</ion-button
+    >
   </ion-col>
 </ion-row>
