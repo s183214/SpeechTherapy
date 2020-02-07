@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WordsMenuComponent } from './words-menu';
+import { LevelWordsComponent } from './levels-words.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: WordsMenuComponent,
+    component: LevelWordsComponent,
     children: [
       {
         path: 'tab1',
@@ -13,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../levels-words/levels-words.module').then(m => m.LevelWordsComponentModule)
+              import('./levels-words.module').then(m => m.LevelWordsComponentModule)
           }
         ]
       },

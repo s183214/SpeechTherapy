@@ -3,6 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MirrorComponent } from './mirror-component/mirror-component.page';
 import { WordsMenuComponent } from '../app/words-menu-component/words-menu';
 import { Tab3Page } from '../app/tab3/tab3.page';
+import { LevelWordsComponent } from './levels-words/levels-words.page';
+
 const routes: Routes = [
   {
     path: '',
@@ -16,7 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'tab3-component', component: Tab3Page
-  }
+  },
+  {
+    path: 'levels-words', component: LevelWordsComponent
+  },
 
 ];
 @NgModule({
