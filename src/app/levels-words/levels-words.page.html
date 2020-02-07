@@ -1,0 +1,32 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Vælg din sværhedsgrad</ion-card-subtitle>
+      <ion-card-title>Niveauer</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card (click)="gotoMirrorComponent()">
+    <ion-item>
+      <ion-icon name="microphone" slot="start"></ion-icon>
+      <ion-label>Basis</ion-label>
+      <ion-button fill="outline" slot="end"> START</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="microphone" slot="start"></ion-icon>
+      <ion-label>Middel</ion-label>
+      <ion-button fill="outline" slot="end">START</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="microphone" slot="start"></ion-icon>
+      <ion-label>Avanceret</ion-label>
+      <ion-button fill="outline" slot="end">START</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>

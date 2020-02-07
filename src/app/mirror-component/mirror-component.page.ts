@@ -5,7 +5,11 @@ import {
   CameraPreviewOptions,
   CameraPreviewDimensions
 } from "@ionic-native/camera-preview/ngx";
-import { NavController, AlertController } from "@ionic/angular";
+import {
+  NavController,
+  AlertController,
+  ToastController
+} from "@ionic/angular";
 import { SpeechRecognition } from "@ionic-native/speech-recognition/ngx";
 import {
   Stitch,
@@ -52,7 +56,8 @@ export class MirrorComponent implements OnInit {
     public navCtrl: NavController,
     private speechRecognition: SpeechRecognition,
     public alertController: AlertController,
-    private router: Router
+    private router: Router,
+    public toastController: ToastController
   ) {
     this.connectToDB();
   }
@@ -186,7 +191,7 @@ export class MirrorComponent implements OnInit {
   }
 
   public backToMenu() {
-    this.router.navigate(["/words-menu"]);
+    this.router.navigate(["/level-words"]);
   }
 
   public startVoiceRecognition() {
@@ -216,20 +221,15 @@ export class MirrorComponent implements OnInit {
     if (checkWord.includes(this.dataWord)) {
       this.updateWordProperty(this.dataWord);
 
-      const alert = await this.alertController.create({
-        header: "Correct",
+      const toast = await this.toastController.create({
+        header: "Korrekt!",
         // subHeader: 'Subtitle',
-        message: "You are doing great! Keep up with the good work!",
+        message: "Fortsæt med det gode arbejde!",
+        position: "bottom",
+        color: "success",
         buttons: [
           {
-            text: "Go back",
-            handler: () => {
-              this.router.navigate(["/words-menu"]);
-              console.log("Go back clicked");
-            }
-          },
-          {
-            text: "Next",
+            text: "Næste",
             handler: () => {
               this.findWordFunc();
             }
@@ -237,22 +237,18 @@ export class MirrorComponent implements OnInit {
         ]
       });
 
-      await alert.present();
+      await toast.present();
     } else {
-      const alert = await this.alertController.create({
-        header: "Sorry, could not understand that",
+      const toast = await this.toastController.create({
+        header: "Undskyld, den fangede jeg ikke!",
         // subHeader: 'Subtitle',
         message:
-          "You are doing great! Maybe it was me, who did not understood you right! Would you like to try again?",
+          "Godt forsøgt! Måske var det mig, der ikke fik fat i det! Kan du gentage dig selv?",
+        position: "bottom",
+        color: "danger",
         buttons: [
           {
-            text: "Skip",
-            handler: () => {
-              this.skipWord();
-            }
-          },
-          {
-            text: "Try again",
+            text: "Prøv igen",
             handler: () => {
               this.startVoiceRecognition();
             }
@@ -260,7 +256,7 @@ export class MirrorComponent implements OnInit {
         ]
       });
 
-      await alert.present();
+      await toast.present();
     }
   }
 }
