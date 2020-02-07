@@ -11,5 +11,6 @@ export class WordsMenuComponent {
 
   public gotoLevelWordsComponent() {
     this.router.navigate(["/level-words"]);
+
   }
 }

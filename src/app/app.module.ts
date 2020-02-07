@@ -20,13 +20,15 @@ import { LevelWordsComponentModule } from "./levels-words/levels-words.module";
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule,
+
+  AppRoutingModule,
     HttpClientModule,
     MirrorComponentModule,
     WordsMenuComponentModule,
     Tab3PageModule,
     LevelWordsComponentModule
   ],
+
   providers: [
     StatusBar,
     SplashScreen,

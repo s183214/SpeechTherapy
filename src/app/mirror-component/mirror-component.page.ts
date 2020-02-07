@@ -5,11 +5,13 @@ import {
   CameraPreviewOptions,
   CameraPreviewDimensions
 } from "@ionic-native/camera-preview/ngx";
+
 import {
   NavController,
   AlertController,
   ToastController
 } from "@ionic/angular";
+
 import { SpeechRecognition } from "@ionic-native/speech-recognition/ngx";
 import {
   Stitch,
@@ -228,6 +230,7 @@ export class MirrorComponent implements OnInit {
         position: "bottom",
         color: "success",
         buttons: [
+
           {
             text: "Næste",
             handler: () => {
@@ -247,6 +250,7 @@ export class MirrorComponent implements OnInit {
         position: "bottom",
         color: "danger",
         buttons: [
+
           {
             text: "Prøv igen",
             handler: () => {
