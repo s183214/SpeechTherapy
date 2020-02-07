@@ -1,19 +1,17 @@
-import { IonicModule } from '@ionic/angular';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { TabsPageRoutingModule } from './levels-words-routing.module';
-
-import { LevelWordsComponent } from './levels-words.page';
+import { IonicModule } from "@ionic/angular";
+import { RouterModule } from "@angular/router";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { LevelWordsComponent } from "./levels-words.page";
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    RouterModule.forChild([{ path: "", component: LevelWordsComponent }])
   ],
   declarations: [LevelWordsComponent]
 })
-export class LevelWordsComponentModule { }
+export class LevelWordsComponentModule {}

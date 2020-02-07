@@ -1,26 +1,27 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LevelWordsComponent } from './levels-words.page';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { IonicModule } from "@ionic/angular";
 
-describe('TabsPage', () => {
+import { LevelWordsComponent } from "./levels-words.page";
+
+describe("Tab1Page", () => {
+
   let component: LevelWordsComponent;
   let fixture: ComponentFixture<LevelWordsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [LevelWordsComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(LevelWordsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
-  it('should create', () => {
+  it("should create", () => {
+
     expect(component).toBeTruthy();
   });
 });

@@ -5,7 +5,13 @@ import {
   CameraPreviewOptions,
   CameraPreviewDimensions
 } from "@ionic-native/camera-preview/ngx";
-import { NavController, AlertController, ToastController } from "@ionic/angular";
+
+import {
+  NavController,
+  AlertController,
+  ToastController
+} from "@ionic/angular";
+
 import { SpeechRecognition } from "@ionic-native/speech-recognition/ngx";
 import {
   Stitch,
@@ -187,7 +193,7 @@ export class MirrorComponent implements OnInit {
   }
 
   public backToMenu() {
-    this.router.navigate(["/words-menu"]);
+    this.router.navigate(["/level-words"]);
   }
 
   public startVoiceRecognition() {

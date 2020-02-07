@@ -10,6 +10,6 @@ export class Tab3Page {
   constructor(private router: Router) {}
 
   public goBackToMenu() {
-    this.router.navigate(["/words-menu"]);
+    this.router.navigate(["/level-words"]);
   }
 }
